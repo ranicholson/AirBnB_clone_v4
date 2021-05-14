@@ -7,10 +7,12 @@ $(document).ready(function () {
     } else if ($(this).prop('checked') === false) {
       delete amenityIds[data.id];
     }
-    const amenityNames = [];
+    let amenityNames = [];
     for (const key in amenityIds) {
-      amenityNames.append(amenityIds[key]);
+      amenityNames.push(amenityIds[key]);
     }
+    amenityNames[0] = "test";
+    console.log(amenityIds);
     $('.amenities h4').text(amenityNames);
   });
 });
