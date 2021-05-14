@@ -8,9 +8,11 @@ $('document').ready(function () {
     }
     $('.amenities h4').text(Object.values(amenityIds).join(', '));
   });
-  $.get('http://localhost:5001/api/v1/status', function (data) {
+  $.get('http://0.0.0.0:5001/api/v1/places_search', function (data) {
     if (data.status === 'OK') {
       $('DIV#api_status').addClass('available');
+    } else {
+      $('DIV#api_status').removeClass('available');
     }
   });
 });
