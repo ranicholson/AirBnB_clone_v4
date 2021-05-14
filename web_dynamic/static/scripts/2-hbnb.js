@@ -8,9 +8,8 @@ $('document').ready(function () {
     }
     $('.amenities h4').text(Object.values(amenityIds).join(', '));
   });
-  $.get('http://0.0.0.0:5001/api/v1/status', function (data, status) {
+  $.get('http://localhost:5001/api/v1/status', function (data) {
     if (data.status === 'OK') {
-      console.log('texts')
       $('DIV#api_status').addClass('available');
     }
   });
